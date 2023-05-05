@@ -9,6 +9,13 @@
   box-sizing: border-box;
 }
 
+:root {
+    --main-bg-color: #FFDFAF;
+    --main-bg-color-light: #FFEACA;
+    --main-bg-color-dark: #F6CE92;
+    --main-bg-color-lightest: #FFF6E8
+}
+
 html, body {
     height: 100%;
 }
@@ -39,7 +46,7 @@ body {
     padding: 16px;
     position: sticky;
     top: 0;
-    background: #FFDFAF;
+    background: var(--main-bg-color);
 }
 
 .siteName {
@@ -84,7 +91,7 @@ body {
     right: 0;
     bottom: 0;
     z-index: 99;
-    background: #FFDFAF;
+    background: var(--main-bg-color);
     color: white;
     list-style: none;
     padding-top: 64px;
@@ -105,7 +112,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #FFDFAF;
+    background-color: var(--main-bg-color);
     padding: 32px;
     margin-bottom: 8px;
 }
@@ -123,14 +130,14 @@ body {
     height: 24px;
     padding: 20px 16px;
     margin-bottom: 20px;
-    background-color: #FFEACA;
+    background-color: var(--main-bg-color-light);
     border: 0.5px solid grey;
 }
 
 #submit {
     border-style: none;
     padding: 8px 5px;
-    background-color: #F6CE92;
+    background-color: var(--main-bg-color-dark);
     border-radius: 5px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
@@ -144,7 +151,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FFDFAF;
+    background-color: var(--main-bg-color);
     border-radius: 50%;
     text-decoration: none;
     margin-left: 8px;
