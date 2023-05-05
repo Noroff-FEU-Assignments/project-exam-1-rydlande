@@ -1,2 +1,156 @@
+
+/* STANDARDS */
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Cormorant';
+}
+.wrapper {
+    flex: 1 0 auto;
+}
+.footer {
+    flex-shrink: 0;
+}
+
+/* STANDARDS */
+
+
+
+
+
+/* NAVBAR */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 16px;
+    position: sticky;
+    top: 0;
+    background: #FFDFAF;
+}
+
+.siteName {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-left: 16px;
+}
+
+.menuItem {
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+    margin: 30px 63px;
+    line-height: 2;
+}
+
+.menuItem:hover {
+    text-decoration: underline !important;
+}
+
+.hamburger {
+    z-index: 100;
+    right: 16px;
+    margin-right: 16px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0 8px 0 8px;
+}
+  
+.closeIcon {
+    display: none;
+}
+  
+.menu {
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: #FFDFAF;
+    color: white;
+    list-style: none;
+    padding-top: 64px;
+}
+  
+.showMenu {
+    transform: translateY(0);
+}
+/* NAVBAR */
+
+
+
+
+
+/* FOOTER */ 
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFDFAF;
+    padding: 32px;
+    margin-bottom: 8px;
+}
+
+.subscibe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 16px;
+    margin-top: 8px;
+}
+
+#email {
+    width: 250px;
+    height: 24px;
+    padding: 20px 16px;
+    margin-bottom: 20px;
+    background-color: #FFEACA;
+    border: 0.5px solid grey;
+}
+
+#submit {
+    border-style: none;
+    padding: 8px 5px;
+    background-color: #F6CE92;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.some {
+    display: flex;
+    flex-direction: row;
+} 
+
+.someCircle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFDFAF;
+    border-radius: 50%;
+    text-decoration: none;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    height: 32px;
+    width: 32px;
+
+}
+/* FOOTER */ 
