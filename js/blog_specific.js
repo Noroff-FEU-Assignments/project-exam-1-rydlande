@@ -25,3 +25,24 @@ menuItems.forEach(
   }
 )
 // NAVBAR //
+
+
+
+// FETCH ID //
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id");
+
+
+const url = `https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts/${id}?_embed=wp:featuredmedia`;
+
+fetch(url)
+  .then(res => res.json())
+  .then((data) => {
+    console.log(data)
+})
+// FETCH ID //
+
+
+
+// CARD // 
