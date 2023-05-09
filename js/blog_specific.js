@@ -28,21 +28,64 @@ menuItems.forEach(
 
 
 
-// FETCH ID //
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
+const main = document.querySelector("main");
+const head = document.querySelector("head");
 const id = params.get("id");
 
-
 const url = `https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts/${id}?_embed=wp:featuredmedia`;
+const delay = 2000;
 
-fetch(url)
-  .then(res => res.json())
-  .then((data) => {
-    console.log(data)
-})
-// FETCH ID //
+  // fetch(url)
+  //   .then(res => res.json())
+  //   .then((data) => {
+  //     console.log(data)
+  //   });
 
 
+  const getBlogs = () => {
+    fetch(url)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data)
 
-// CARD // 
+        const {id, date, title, rendered, content} = data;
+        const media = data._embedded["wp:featuredmedia"][0].source_url;
+        const d = new Date(date).toLocaleDateString('en-EU', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric',
+        });
+
+
+        // BLOG TITLE TO HEAD
+        const BlogTitle = document.createElement("title");
+        BlogTitle.innerHTML = title.rendered;
+        head.appendChild(BlogTitle);
+
+
+        // BLOG COTENT
+        main.innerHTML = `<div>
+        <div class="featuredImg">
+          <img src="${media}" alt="" class="imgfitPage">
+        </div>
+        <div class="blogContent">
+          <h2 class="blogTitle">${title.rendered}</h2>
+          <div class="blogText">
+          <p class="published">${d}</p>
+          <p>${content.rendered}</p>
+          </div>
+        </div>
+      </div>`
+
+      })
+      .catch((e) => {
+        main.innerHTML = `404 Something went wrong. Please try again later.`
+        console.log(e)
+    })
+  }
+
+  getBlogs();

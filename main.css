@@ -32,6 +32,10 @@ body {
 .footer {
     flex-shrink: 0;
 }
+.imgfitPage {
+    width: 100%;
+    display: block;
+}
 /* STANDARDS */
 
 
@@ -182,7 +186,18 @@ body {
 
 
 /* BLOG SPECIFIC */
-
+.blogContent {
+    padding: 40px;
+}
+.blogTitle {
+    text-align: center;
+    font-size: 32px;
+}
+.blogText {
+    padding: 15px;
+    font-family: 'Open Sans';
+    font-size: 16px;
+}
 /* BLOG SPECIFIC */
 
 
@@ -214,10 +229,6 @@ body {
 .founderImg {
     height: 80px;
     border-radius: 50%;
-}
-.imgfitPage {
-    width: 100%;
-    display: block;
 }
 .aboutContent {
     padding: 40px 40px 0 40px;
