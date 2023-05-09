@@ -61,7 +61,7 @@ body {
     line-height: 2;
 }
 .menuItem:hover {
-    text-decoration: underline !important;
+    text-decoration: underline;
 }
 .hamburger {
     z-index: 100;
