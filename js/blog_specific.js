@@ -28,6 +28,11 @@ menuItems.forEach(
 
 
 
+
+
+
+
+// MAIN //
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const main = document.querySelector("main");
@@ -35,7 +40,6 @@ const head = document.querySelector("head");
 const id = params.get("id");
 
 const url = `https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts/${id}?_embed=wp:featuredmedia`;
-const delay = 2000;
 
   // fetch(url)
   //   .then(res => res.json())
@@ -63,11 +67,11 @@ const delay = 2000;
 
         // BLOG TITLE TO HEAD
         const BlogTitle = document.createElement("title");
-        BlogTitle.innerHTML = title.rendered;
+        BlogTitle.innerHTML = `SerialSnoozer | ` + title.rendered;
         head.appendChild(BlogTitle);
 
 
-        // BLOG COTENT
+        // BLOG CONTENT
         main.innerHTML = `<div>
         <div class="featuredImg">
           <img src="${media}" alt="" class="imgfitPage">
@@ -80,12 +84,13 @@ const delay = 2000;
           </div>
         </div>
       </div>`
-
       })
+
       .catch((e) => {
-        main.innerHTML = `404 Something went wrong. Please try again later.`
+        main.innerHTML = `Woops! Something went wrong... Please try again later.`
         console.log(e)
     })
   }
 
   getBlogs();
+// MAIN //

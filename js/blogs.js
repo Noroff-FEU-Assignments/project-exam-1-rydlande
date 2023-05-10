@@ -28,9 +28,26 @@ menuItems.forEach(
 
 
 
+// LOADER //
+const loader = document.getElementById("loading");
+
+function displayLoading() {
+  loader.classList.add("display");
+  setTimeout(() => {
+    
+  loader.classList.remove("display");
+  });
+}
+
+function hideLoading() {
+  loader.classList.remove("display");
+}
+// LOADER //
 
 
 
+
+// MAIN //
 const main = document.querySelector("main");
 const url = "https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts?_embed=wp:featuredmedia"
 const delay = 2000;
@@ -56,6 +73,8 @@ function renderBlogs(data) {
       year: 'numeric',
     });
     console.log(d);
+    loader.classList.remove("loading");   // REMOVE LOADER //
+
 
     let media = element._embedded["wp:featuredmedia"][0].source_url;
     return `
@@ -67,17 +86,13 @@ function renderBlogs(data) {
       <p class="published">${d}</p>
     </div>
   </a></div>`;
-
-  
   
 
   }).join("")
   console.log(data)
 }
 
-setTimeout(() => {getBlogs()});
 
-
-
-
-
+// setTimeout(() => {getBlogs()});
+getBlogs();
+// MAIN //
