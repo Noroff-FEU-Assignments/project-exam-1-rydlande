@@ -32,7 +32,19 @@
       </button>
     </header>
 
-    <main class="wrapper"></main>
+    <main class="wrapper">
+      <div class="getInTouch">
+        <p>Get in touch</p>
+      </div>
+      <form onsubmit="return false" class="contactContainer">
+        <input type="text" placeholder="Full name" id="ContactName">
+        <input type="email" placeholder="Email adress" id="ContactEmail">
+        <input type="text" placeholder="Subject" id="subject">
+        <span>What do you wanna ask us?</span>
+        <textarea id="formContent" rows="10"></textarea>
+        <button onclick="sendContact();">Send</button> 
+      </form>
+    </main>
 
     <footer class="footer">
       <div class="subscribe">
