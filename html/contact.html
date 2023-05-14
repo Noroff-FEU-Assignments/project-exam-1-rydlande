@@ -36,13 +36,22 @@
       <div class="getInTouch">
         <p>Get in touch</p>
       </div>
-      <form onsubmit="return false" class="contactContainer">
-        <input type="text" placeholder="Full name" id="ContactName">
-        <input type="email" placeholder="Email adress" id="ContactEmail">
-        <input type="text" placeholder="Subject" id="subject">
-        <span>What do you wanna ask us?</span>
-        <textarea id="formContent" rows="10"></textarea>
-        <button onclick="sendContact();">Send</button> 
+      <form id="contactForm" class="contactContainer">
+
+        <input type="text"  placeholder="Name"          id="contactName"    class="contactForm">
+        <span id="nameMessage" class="contactFalse"></span>
+
+        <input type="email" placeholder="Email adress"  id="contactEmail"   class="contactForm">
+        <span id="emailMessage" class="contactFalse"></span>
+
+        <input type="text"  placeholder="Subject"       id="contactSubject" class="contactForm">
+        <span id="subjectMessage" class="contactFalse"></span>
+
+        <span class="contactQ">What do you wanna ask us?</span>
+        <span id="contentMessage" class="contactFalseTop"></span>
+        <textarea type="text" rows="10" placeholder="Message..." id="formContent" class="contactForm"></textarea>
+
+        <button   type="submit" class="contactBtn">Send</button> 
       </form>
     </main>
 
@@ -54,7 +63,7 @@
 
       <form class="subscibe-form">
         <span id="emailMessage"></span></br>
-        <input id="email" type="text" placeholder="Your email adress"/>  <!-- "youremail@email.com" -->
+        <input id="email" type="text" placeholder="Your email adress"/> 
         <div>
           <input id="submit" type="submit" value="Sign me up!">
         </div>
