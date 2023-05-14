@@ -51,7 +51,7 @@ function hideLoading() {
 // MAIN //
 
 const main = document.querySelector("main");
-const url = "https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts?_embed=wp:featuredmedia"
+const url = "https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts?per_page=15"
 const delay = 2000;
 
 
@@ -67,7 +67,7 @@ const getBlogs = () => {
 function renderBlogs(data) {
   main.innerHTML = data.map((element, index, arr) => {
 
-    const {id, date, title, rendered, content} = element;
+    const {id, date, title, rendered, content, jetpack_featured_media_url} = element;
 
     const d = new Date(date).toLocaleDateString('en-EU', {
       day: 'numeric',
@@ -78,11 +78,11 @@ function renderBlogs(data) {
     loader.classList.remove("loading");         // Remove loader
 
 
-    let media = element._embedded["wp:featuredmedia"][0].source_url;
+    // let media = element._embedded["wp:featuredmedia"][0].source_url;
     return `
     <div class="blogsContainer">
     <a href="./blog_specific.html?id=${id}" class="card">
-    <img class="imgfitPage" src="${media}" alt="${element._embedded["wp:featuredmedia"][0].alt_text}" />
+    <img class="imgfitPage" src="${jetpack_featured_media_url}" alt="Featured image: ${title.rendered}" />
     <div class="cardText">
       <h3>${title.rendered}</h3>
       <p class="published">${d}</p>
