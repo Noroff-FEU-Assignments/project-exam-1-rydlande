@@ -125,4 +125,5 @@ function renderBlogs(data) {
 
 }
 
+
 getBlogs()
