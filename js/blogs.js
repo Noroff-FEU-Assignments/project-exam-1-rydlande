@@ -34,7 +34,6 @@ const loader = document.getElementById("loading");
 function displayLoading() {
   loader.classList.add("display");
   setTimeout(() => {
-    
   loader.classList.remove("display");
   });
 }
@@ -47,7 +46,10 @@ function hideLoading() {
 
 
 
+
+
 // MAIN //
+
 const main = document.querySelector("main");
 const url = "https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts?_embed=wp:featuredmedia"
 const delay = 2000;
@@ -73,12 +75,12 @@ function renderBlogs(data) {
       year: 'numeric',
     });
     console.log(d);
-    loader.classList.remove("loading");   // REMOVE LOADER //
+    loader.classList.remove("loading");         // Remove loader
 
 
     let media = element._embedded["wp:featuredmedia"][0].source_url;
     return `
-    <div class="container">
+    <div class="blogsContainer">
     <a href="./blog_specific.html?id=${id}" class="card">
     <img class="imgfitPage" src="${media}" alt="${element._embedded["wp:featuredmedia"][0].alt_text}" />
     <div class="cardText">
@@ -93,6 +95,108 @@ function renderBlogs(data) {
 }
 
 
-// setTimeout(() => {getBlogs()});
 getBlogs();
+
+
+
+
+
+//////// NÆRMESTE JEG KOM I DAG 14.05.23
+
+// const main = document.querySelector("main");
+// const url = "https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts?_embed=wp:featuredmedia"
+// const delay = 2000;
+// const cardContainer = document.querySelector("#container");
+// const loadMoreButton = document.getElementById("load-more");
+// const cardCountElem = document.getElementById("card-count");
+// const cardTotalElem = document.getElementById("card-total");
+
+
+
+// const getBlogs = () => {
+//   fetch(url)
+//   .then(res => res.json())
+//   .then((data) => {
+//     renderBlogs(data)
+//   })
+// }
+
+// const cardLimit = 99;
+//     const cardIncrease = 3;
+//     const pageCount = Math.ceil(cardLimit / cardIncrease);
+//     let currentPage = 1;
+//     cardTotalElem.innerHTML = cardLimit;
+
+
+
+//         const handleButtonStatus = () => {
+//           if (pageCount === currentPage) {
+//             loadMoreButton.classList.add("disabled");
+//             loadMoreButton.setAttribute("disabled", true);
+//           }
+//         };
+
+//         const card = document.createElement("div");
+//         card.className = "card";
+
+
+// function renderBlogs(data) {
+//   card.innerHTML = data.map((element, index, arr) => {
+
+//     const {id, date, title, rendered, content} = element;
+//     const d = new Date(date).toLocaleDateString('en-EU', {
+//       day: 'numeric',
+//       month: 'long',
+//       year: 'numeric',
+//     });
+//     console.log(d);
+//     loader.classList.remove("loading");         // Remove loader
+    
+  
+//     const addCards = (pageIndex) => {
+//       currentPage = pageIndex;
+    
+//       handleButtonStatus();
+    
+//       const startRange = (pageIndex - 1) * cardIncrease;
+//       const endRange =
+//         pageIndex * cardIncrease > cardLimit ? cardLimit : pageIndex * cardIncrease;
+      
+//       cardCountElem.innerHTML = endRange;
+    
+//       for (let i = startRange + 1; i <= endRange; i++) {
+//         renderBlogs(data);
+//       }
+//     };
+
+
+//     window.onload = function () {
+//       addCards(currentPage);
+//       loadMoreButton.addEventListener("click", () => {
+//         addCards(currentPage + 1);
+//       });
+//     };
+
+//     let media = element._embedded["wp:featuredmedia"][0].source_url;
+//     return `
+//     <div class="container">
+//     <a href="./blog_specific.html?id=${id}" class="card">
+//     <img class="imgfitPage" src="${media}" alt="${element._embedded["wp:featuredmedia"][0].alt_text}" />
+//     <div class="cardText">
+//       <h3>${title.rendered}</h3>
+//       <p class="published">${d}</p>
+//     </div>
+//   </a></div>`;
+
+  
+  
+
+//   }).join("")
+//   cardContainer.appendChild(card);
+//   console.log(data)
+// }
+
+
+// getBlogs();
+
 // MAIN //
