@@ -1,11 +1,9 @@
-// NAVBAR //
-const menu = document.querySelector(".menu");
-const menuItems = document.querySelectorAll(".menuItem");
-const hamburger = document.querySelector(".hamburger");
-const closeIcon = document.querySelector(".closeIcon");
-const menuIcon = document.querySelector(".menuIcon");
+// NAV //
+const toggleMenu = () => {
+  const menu = document.querySelector(".menu");
+  const closeIcon = document.querySelector(".closeIcon");
+  const menuIcon = document.querySelector(".menuIcon");
 
-function toggleMenu() {
   if (menu.classList.contains("showMenu")) {
     menu.classList.remove("showMenu");
     closeIcon.style.display = "none";
@@ -15,115 +13,184 @@ function toggleMenu() {
     closeIcon.style.display = "block";
     menuIcon.style.display = "none";
   }
-}
-
+};
+const hamburger = document.querySelector(".hamburger");
 hamburger.addEventListener("click", toggleMenu);
-
-menuItems.forEach( 
-  function(menuItem) { 
-    menuItem.addEventListener("click", toggleMenu);
-  }
-)
-// NAVBAR //
+// NAV //
 
 
 
-// LOADER //
-// const loader = document.getElementById("loading");
+// FETCH AND LOADER
+const url = "https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts?per_page=100";
+const carouselList = document.querySelector(".carousel-list");
+const prevButton = document.querySelector(".btnPrev");
+const nextButton = document.querySelector(".btnNext");
+const loader = document.querySelector(".loader");
+let currentIndex = 0;
 
-function displayLoading() {
-  loader.classList.add("display");
-  setTimeout(() => {
-    
-  loader.classList.remove("display");
+const showSlide = (index) => {
+  const carouselItems = document.querySelectorAll(".carousel-item");
+  carouselItems.forEach((item) => {
+    item.classList.remove("active");
   });
-}
 
-function hideLoading() {
-  loader.classList.remove("display");
-}
+  carouselItems[index].classList.add("active");
+};
 
-const main = document.querySelector("main");
+const showNextSlide = () => {
+  const carouselItems = document.querySelectorAll(".carousel-item");
+  currentIndex++;
+  if (currentIndex >= carouselItems.length) {
+    currentIndex = 0;
+  }
+  showSlide(currentIndex);
+};
 
+const showPrevSlide = () => {
+  const carouselItems = document.querySelectorAll(".carousel-item");
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = carouselItems.length - 1;
+  }
+  showSlide(currentIndex);
+};
 
-// LOADER //
-
-
-
-
-// MAIN //
-const slider = document.getElementById("slider");
-const url = "https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts?_embed=wp:featuredmedia"
+prevButton.addEventListener("click", showPrevSlide);
+nextButton.addEventListener("click", showNextSlide);
 
 const getBlogs = () => {
+  loader.style.display = "block";
+
   fetch(url)
-  .then(res => res.json())
-  .then((data) => {
-    renderBlogs(data)
-  })
-  // .catch((e) => {
-  //   main.innerHTML = `Woops! Something went wrong... Please try again later.`
-  //   console.log(e)
-  // })
-}
+    .then((res) => res.json())
+    .then((data) => {
+      renderBlogs(data);
+      loader.style.display = "none";
+    })
+    .catch((e) => {
+      const main = document.querySelector("main.wrapper");
+      main.innerHTML = `Woops! Something went wrong... Please try again later.`;
+      console.log(e);
 
-function renderBlogs(data) {
-    slider.innerHTML = data.map((element, index, arr) => {  
+    });
+};
 
-    const {id, date, title, rendered, content, _embedded} = element;
+const renderBlogs = (data) => {
+  carouselList.innerHTML = "";
 
-   
+  data.forEach((element) => {
     
+    const { id, title, jetpack_featured_media_url } = element;
 
-    let media = _embedded["wp:featuredmedia"][0].source_url;
-    return `
-    <div class="sliderContainer">
-    <a href="./blog_specific.html?id=${id}" class="sliderCard">
-      <img src="${media}" alt="${element._embedded["wp:featuredmedia"][0].alt_text}" class="sliderImg" />
-      <div class="sliderText">
+    const carouselItem = document.createElement("li");
+    carouselItem.classList.add("carousel-item");
+
+    carouselItem.innerHTML = `
+      <a href="./html/blog_specific.html?id=${id}" class="sliderCard">
+        <img src="${jetpack_featured_media_url}" alt="Featured image: ${title.rendered}" class="sliderImg" />
         <h3 class="sliderH3">${title.rendered}</h3>
-        <p class="sliderContent">start av innhold?</p>
-      </div>
-    </a>
-</div>
-<a class="btnNext" onclick="nextPost(-1)"><i class="fa-solid fa-angle-right fa-2xl" style="color: var(--main-bg-color);"></i></a>
-    <a class="btnPrev" onclick="prevPost(1)"><i class="fa-solid fa-angle-left fa-2xl" style="color: var(--main-bg-color)"></i></a>
+      </a>
+    `;
 
-    
-    `
-  }).join("")
-  console.log(data)
+    carouselList.appendChild(carouselItem);
+    loader.style.display = "none";
+  });
 
-  loader.classList.remove("loading");
+  showSlide(0);
+};
 
-//   const carousel = document.getElementById("carousel");
-
-//   window.onload = function () {
-//     if (carousel.length) {
-//       carousel.forEach((carousel) => {
-//         const slideContainer = carousel.querySelector(".sliderContainer");
-//         const slides = carousel.querySelectorAll(".sliderCard");
-
-//         const slideContainerWidth = slideContainer.offsetWidth;
-//         const scrollIncrement = slideContainerWidth / slides.length;
-
-//         const previousBtn = document.getElementById("precious");
-//         const forwardsBtn = document.getElementById("forwards");
+getBlogs();
 
 
-//         forwardsBtn.addEventListener("click", () => {
-//           slideContainer.scrollBy(scrollIncrement, 0);
-//         });
 
-//         previousBtn.addEventListener("click", () => {
-//           slideContainer.scrollBy(scrollIncrement * -1, 0);
-//         });
-//       });
-//     }
+// const url = "https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts?per_page=100";
+// const carouselList = document.querySelector(".carousel-list");
+// const prevButton = document.querySelector(".btnPrev");
+// const nextButton = document.querySelector(".btnNext");
+// const loader = document.querySelector(".loader");
+// let currentIndex = 0;
 
-// }
+// const showSlide = (index) => {
+//   const carouselItems = document.querySelectorAll(".carousel-item");
+//   carouselItems.forEach((item) => {
+//     item.classList.remove("active");
+//   });
 
-}
+//   carouselItems[index].classList.add("active");
+// };
 
+// const showNextSlide = () => {
+//   const carouselItems = document.querySelectorAll(".carousel-item");
+//   currentIndex++;
+//   if (currentIndex >= carouselItems.length) {
+//     currentIndex = 0;
+//   }
+//   showSlide(currentIndex);
+// };
 
-getBlogs()
+// const showPrevSlide = () => {
+//   const carouselItems = document.querySelectorAll(".carousel-item");
+//   currentIndex--;
+//   if (currentIndex < 0) {
+//     currentIndex = carouselItems.length - 1;
+//   }
+//   showSlide(currentIndex);
+// };
+
+// prevButton.addEventListener("click", showPrevSlide);
+// nextButton.addEventListener("click", showNextSlide);
+
+// const getBlogs = () => {
+//   loader.style.display = "block";
+
+//   fetch(url)
+//     .then((res) => res.json())
+//     .then((data) => {
+//       renderBlogs(data);
+//       loader.style.display = "none";
+//     })
+//     .catch((e) => {
+//       const main = document.querySelector("main.wrapper");
+//       main.innerHTML = `Woops! Something went wrong... Please try again later.`;
+//       console.log(e);
+//       loader.style.display = "none";
+//     });
+// };
+
+// const renderBlogs = (data) => {
+//   carouselList.innerHTML = "";
+
+//   for (let i = 0; i < data.length; i += 3) {
+//     const blogPosts = data.slice(i, i + 3);
+
+//     const carouselItem = document.createElement("li");
+//     carouselItem.classList.add("carousel-item");
+
+//     blogPosts.forEach((element) => {
+//       const { id, title, jetpack_featured_media_url } = element;
+
+//       const blogLink = document.createElement("a");
+//       blogLink.href = `./html/blog_specific.html?id=${id}`;
+//       blogLink.classList.add("sliderCard");
+
+//       const blogImage = document.createElement("img");
+//       blogImage.src = jetpack_featured_media_url;
+//       blogImage.alt = `Featured image: ${title.rendered}`;
+//       blogImage.classList.add("sliderImg");
+
+//       const blogTitle = document.createElement("h3");
+//       blogTitle.classList.add("sliderH3");
+//       blogTitle.textContent = title.rendered;
+
+//       blogLink.appendChild(blogImage);
+//       blogLink.appendChild(blogTitle);
+//       carouselItem.appendChild(blogLink);
+//     });
+
+//     carouselList.appendChild(carouselItem);
+//   }
+
+//   showSlide(0);
+// };
+
+// getBlogs();

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <script src="./js/script.js" type="module"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Exam1" />
+    <script src="https://kit.fontawesome.com/0c38094ff5.js" crossorigin="anonymous"></script>
+    <title>Home</title>
+    <link rel="icon" href="./media/logo-head1.png" type="image/icon type">
+
+  </head>
+
+  <body>
+    <header class="nav">
+      <div>
+        <a class="siteName" href="index.html">SerialSnoozer</a>
+      </div>
+      <ul class="menu">
+        <li><a class="menuItem" href="index.html">Home</a></li>
+        <li><a class="menuItem" href="./html/blogs.html">Blogs</a></li>
+        <li><a class="menuItem" href="./html/about.html">About us</a></li>
+        <li><a class="menuItem" href="./html/contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger">
+        <i class="menuIcon"><i class="fa-solid fa-ellipsis-vertical" style="color: #000000;"></i></i>
+        <i class="closeIcon"><i class="fa-solid fa-xmark"></i></i>
+      </button>
+    </header>
+
+
+    <main class="wrapper">
+
+  <!-- FRONT PAGE PICTURE -->
+        <div class="homeImg">
+          <img src="./media/frontpage.png" alt="front page decorative image" class="imgfitPage"/>
+        </div>
+
+
+
+  <!-- SLIDER -->
+  <div id="carousel">
+      <div class="slider" id="slider">
+        <div id="loading" class="loading"><i class="fa-sharp fa-solid fa-martini-glass-empty fa-fade fa-2xl" style="color: var(--main-bg-color-light);"></i></div>
+
+        <div class="sliderContainer"></div>
+
+
+        
+
+      <!-- <div class="sliderContainer">
+          <a href="./html/blogs.html" class="sliderCard">
+            <img src="./media/food2.jpg" alt="picture" class="sliderImg" />
+            <div class="sliderText">
+              <h3>Title</h3>
+              <p class="sliderContent">start av innhold?</p>
+            </div>
+          </a>
+      </div>
+
+      <div class="sliderContainer">
+        <a href="./html/blogs.html" class="sliderCard">
+          <img src="./media/food2.jpg" alt="picture" class="sliderImg" />
+          <div class="sliderText">
+            <h3>Title</h3>
+          </div>
+        </a>
+    </div>
+
+    <div class="sliderContainer">
+      <a href="./html/blogs.html" class="sliderCard">
+        <img src="./media/food2.jpg" alt="picture" class="sliderImg" />
+        <div class="sliderText">
+          <h3>Title</h3>
+        </div>
+      </a>
+  </div> -->
+    <!-- <a class="btnNext" onclick="nextPost(-1)"><i class="fa-solid fa-angle-right fa-2xl" style="color: var(--main-bg-color);"></i></a>
+    <a class="btnPrev" onclick="prevPost(1)"><i class="fa-solid fa-angle-left fa-2xl" style="color: var(--main-bg-color)"></i></a> -->
+
+  </div>
+</div>
+
+
+
+  <!-- CONTENT DESCIPTION -->
+  <div class="homeDescription">
+    <h1 class="homeH1">Description</h1>
+    <p class="homeP">
+      Whether you're a professional bartender looking to refine your skills
+      or a novice mixologist seeking inspiration for your next cocktail
+      party, our website has everything you need to know about the art of
+      mixing drinks. Our team of experienced bartenders and drink
+      enthusiasts have curated a wide selection of recipes, tips, and tricks
+      to help you make the perfect drink for any occasion. From classic
+      cocktails to modern mixology techniques, our website has it all.</p>
+  </div>
+    </main>
+
+
+    <footer class="footer">
+      <div class="subscribe">
+
+      <p style="font-weight: bold;">Subscribe!</p>
+      <p>Sign up for out newsletter</p>
+
+      <form class="subscibe-form">
+        <span id="emailMessage"></span></br>
+        <input id="email" type="text" placeholder="Your email adress"/>  <!-- "youremail@email.com" -->
+        <div>
+          <input id="submit" type="submit" value="Sign me up!">
+        </div>
+      </form>
+    </div>
+
+    <div class="some">
+      <a class="someCircle" href="https://www.facebook.com/"><i class="fa-brands fa-facebook" style="color: var(--main-bg-color);"></i></a>
+      <a class="someCircle" href="https://www.instagram.com/"><i class="fa-brands fa-instagram" style="color: var(--main-bg-color);"></i></a>
+      <a class="someCircle" href="https://twitter.com/"><i class="fa-brands fa-twitter" style="color: var(--main-bg-color);"></i></a>
+    </div>
+    </footer>
+  </body>
+</html>

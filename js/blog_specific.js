@@ -57,7 +57,7 @@ const url = `https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts/${id}?_embed
         console.log(data)
 
         const {id, date, title, rendered, content} = data;
-        const media = data._embedded["wp:featuredmedia"][0].source_url;
+        var media = data._embedded["wp:featuredmedia"][0].source_url;
         const d = new Date(date).toLocaleDateString('en-EU', {
           day: 'numeric',
           month: 'long',
@@ -84,6 +84,16 @@ const url = `https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts/${id}?_embed
           </div>
         </div>
       </div>`
+
+      var clicked;
+        function clicked() {
+            alert("Image clicked");
+            }
+        function starter() {
+            media = document.getElementById("image1");
+            image.onclick = clicked;
+            }    
+        window.onload = starter;
       })
 
       .catch((e) => {
