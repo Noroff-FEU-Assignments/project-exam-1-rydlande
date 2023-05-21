@@ -1,4 +1,3 @@
-
 /* STANDARDS */
 
 /* Cormorant */
@@ -11,6 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* outline: 1px solid red; */
 }
 :root {
     --main-bg-color: #FB5F4F;
@@ -21,7 +21,7 @@
     --text-color-black: #000;
     --text-color-main: #FB5F4F;
 }
-html, body {
+/* html, body {
     height: 100%;
 }
 body {
@@ -34,13 +34,38 @@ body {
 }
 .footer {
     flex-shrink: 0;
+} */
+html, body {
+    width: 100%;
+}
+body {
+    margin: 0;
+    font-family: 'Cormorant';
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        'header'
+        'main'
+        'footer';
+  }
+body > header {
+    grid-area: header;
+    z-index: 2;
+}
+body > main {
+    grid-area: main;
+}
+body > footer {
+    grid-area: footer;
 }
 .imgfitPage {
     width: 100%;
     display: block;
 }
-header {
-    z-index: 2;
+.wrapper {
+    width: 100vw;
 }
 /* STANDARDS */
 
@@ -49,14 +74,6 @@ header {
 
 /* LOADER */
 .loader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-}
-.loader {
-    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -187,23 +204,38 @@ header {
 
 
 
-
 /* HOME PAGE */
+.imgfitHome {
+    width: 100%;
+    display: block;
+}
 .homeImg {
     background-color: var(--main-bg-color-light); 
 }
 .carousel-container {
     position: relative;
-    max-width: 400px;
+    max-width: 481px;
     left: 50%;
     transform: translateX(-50%);
+    font-family: 'Open Sans';
+}
+.carousel-list {
+    margin: 0 30px 0 30px;
+}
+.carousel-item {
+    display: none;
+}
+.carousel-item.active {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 .sliderCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 35px; /* MÅ VÆRE LIK MARGIN PÅ .sliderH3 */
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 20px;
+    text-decoration: none;
+    margin-top: 20px;
 }
 .sliderImg {
     width: 100%;
@@ -212,22 +244,15 @@ header {
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .sliderH3 {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: -50px;
+    background-color: rgba(0, 0, 0, 0.7);
     text-align: center;
-    margin: 35px; /* MÅ VÆRE LIK PADDING PÅ .sliderCard */
-    font-size: 24px;
+    padding: 10px;
+    object-fit: contain;
+    font-size: 18px;
     color: #fff;
-}
-.carousel-item {
-    display: none;
-}
-.carousel-item.active {
-    display: block;
+    font-weight: 400;
 }
 .btnPrev,
 .btnNext {
@@ -240,18 +265,10 @@ header {
     cursor: pointer;
 }
 .btnPrev {
-    left: 5px;
+    left: 3px;
 }
 .btnNext {
-    right: 5px;
-}
-.loader {
-    /* display: none; */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
+    right: 3px;
 }
 .homeDescription {
     background-color: var(--main-bg-color-light);  
@@ -267,7 +284,6 @@ p.homeP {
     padding: 30px;
     font-size: 13px;
 }
-
 /* HOME PAGE */
 
 
@@ -275,6 +291,16 @@ p.homeP {
 
 
 /* BLOGS */
+/* .overview {
+    display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 600px 1fr;
+} */
+.overview {
+    display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr minmax(0, 400px) 1fr;
+}
 .blogsContainer {
     margin: 0 auto;
     margin-top: 35px;
@@ -299,7 +325,7 @@ p.homeP {
     font-style: italic;
     font-size: 12px;
 }
-#load-more {
+/* #load-more {
     width: calc((100% / 3) - 8px);
     padding: 16px;
     background-color: white;
@@ -310,14 +336,13 @@ p.homeP {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15rem;
-  }
+}
 #load-more:not([disabled]):hover {
     box-shadow: 0 1px 9px rgba(0, 0, 0, 0.2);
-  }
-  
-  #load-more[disabled] {
+}
+#load-more[disabled] {
     background-color: #eaeaea !important;
-  }
+} */
   
 /* BLOGS */
 
@@ -439,4 +464,69 @@ p.homeP {
 .aboutContent {
     padding: 40px 40px 0 40px;
 }
+.imgfitAbout {
+    width: 100%;
+    display: block;
+    border-bottom: 2px solid black;
+}
 /* ABOUT */
+
+
+
+
+
+
+
+
+
+
+
+    /* TABLET */
+@media (min-width: 481px) {
+    .imgfitHome {
+        width: 70%;
+        margin: auto;
+        display: block;
+    }
+    .carousel-container {
+        max-width: 1024px;
+    }
+    .sliderCard {
+        width: 50%;
+        padding: 10px;
+    }
+    .sliderH3 {
+        top: -50px;
+        padding: 10px;
+        font-size: 18px;
+    }
+}
+
+
+
+    /* DESKTOP */
+@media (min-width: 1025px) {
+    .imgfitHome {
+        width: 40%;
+        margin: auto;
+        display: block;
+    }
+    .carousel-container {
+        max-width: 1281px;
+    }
+    .sliderCard {
+        width: 33.3%;
+        padding: 30px;
+    }
+    .sliderH3 {
+        top: -50px;
+        padding: 15px;
+        font-size: 24px;
+    }
+    .btnPrev {
+        left: 8px;
+    }
+    .btnNext {
+        right: 8px;
+    }
+}

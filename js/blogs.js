@@ -50,7 +50,7 @@ function hideLoading() {
 
 // MAIN //
 
-const main = document.querySelector("main");
+const overview = document.getElementById("overview");
 const url = "https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts?per_page=15"
 const delay = 2000;
 
@@ -65,7 +65,7 @@ const getBlogs = () => {
 
 
 function renderBlogs(data) {
-  main.innerHTML = data.map((element, index, arr) => {
+  overview.innerHTML = data.map((element, index, arr) => {
 
     const {id, date, title, rendered, content, jetpack_featured_media_url} = element;
 
