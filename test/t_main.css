@@ -297,8 +297,9 @@ p.homeP {
   grid-template-columns: 1fr 600px 1fr;
 } */
 .overview {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr minmax(0, 400px) 1fr;
 }
 .blogsContainer {
     margin: 0 auto;
