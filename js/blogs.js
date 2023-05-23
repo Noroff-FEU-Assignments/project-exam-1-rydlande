@@ -43,7 +43,7 @@ function hideLoading() {
 
 
 // MAIN //
-const url = "https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts?per_page=15"
+const url = "https://exam1.serialsnoozer.no/wp-json/wp/v2/posts?per_page=15"
 
 const loadMoreButton = document.getElementById('loadMore');
 const overview = document.getElementById('overview');

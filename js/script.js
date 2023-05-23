@@ -21,7 +21,7 @@ hamburger.addEventListener("click", toggleMenu);
 
 
 // FETCH
-const url = "https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts?per_page=100";
+const url = "https://exam1.serialsnoozer.no/wp-json/wp/v2/posts?per_page=100";
 const carouselList = document.querySelector(".carousel-list");
 const prevButton = document.querySelector(".btnPrev");
 const nextButton = document.querySelector(".btnNext");

@@ -337,9 +337,9 @@ p.homeP {
 
 
 .moreBlogs {
-    display: flex;
+    display: grid;
     flex-direction: column;
-    justify-content: center;
+    justify-self: center;
     align-items: center;
     width: 200px;
     text-align: center;
