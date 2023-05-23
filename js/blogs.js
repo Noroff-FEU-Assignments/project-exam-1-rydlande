@@ -50,6 +50,7 @@ const overview = document.getElementById('overview');
 const cardCount = document.getElementById('cardCount');
 const cardTotal = document.getElementById('cardTotal');
 
+
 const blogsPerPage = 6;
 let startIndex = 0;
 let allBlogs = [];

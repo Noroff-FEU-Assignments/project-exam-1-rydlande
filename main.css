@@ -212,6 +212,8 @@ body > footer {
 .homeImg {
     background-color: var(--main-bg-color-light); 
 }
+
+
 .carousel-container {
     position: relative;
     max-width: 481px;
@@ -296,9 +298,17 @@ p.homeP {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 600px 1fr;
 } */
+#h1 {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
 .overview {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 30px 20px 30px;
 }
 .blogsContainer {
     margin: 0 auto;
@@ -323,6 +333,28 @@ p.homeP {
     font: 'Open Sans';
     font-style: italic;
     font-size: 12px;
+}
+
+
+.moreBlogs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    text-align: center;
+}
+
+#loadMore {
+    background-color: var(--main-bg-color);
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border:none; 
+    border-radius:8px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
 }
 /* #load-more {
     width: calc((100% / 3) - 8px);
