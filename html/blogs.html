@@ -23,7 +23,7 @@
       </ul>
       <button class="hamburger">
         <i class="menuIcon"
-          ><i class="fa-solid fa-ellipsis-vertical" style="color: #000000"></i
+          ><i class="fa-solid fa-ellipsis-vertical" ></i
         ></i>
         <i class="closeIcon"><i class="fa-solid fa-xmark"></i></i>
       </button>
@@ -31,15 +31,16 @@
 
     <main class="wrapper">
       <div id="h1"><p>All blogs</p></div>      
+
       <div class="overview" id="overview"></div>
 
       <div id="loading" class="loading"><i class="fa-sharp fa-solid fa-martini-glass-empty fa-fade fa-2xl" style="color: var(--main-bg-color-light);"></i></div>
       
-      
       <div id="container" class="blogContainer"></div>
-      <div class="moreBlogs">
-        <button id="loadMore">Load more</button>
-        <span>Showing 
+
+      <div id="moreBlogs" class="moreBlogs">
+        <button id="loadMore">Load more</button><br/>
+        <span class="showing">Showing 
           <span id="cardCount"></span> of 
           <span id="cardTotal"></span> cards      
         </span>

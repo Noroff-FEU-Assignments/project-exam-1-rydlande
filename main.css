@@ -127,8 +127,12 @@ body > footer {
     cursor: pointer;
     padding: 0 8px 0 8px;
 }
+.menuIcon {
+    color: var(--text-color-white);
+}
 .closeIcon {
     display: none;
+    color: var(--text-color-white);
 }
 .menu {
     position: fixed;
@@ -212,8 +216,6 @@ body > footer {
 .homeImg {
     background-color: var(--main-bg-color-light); 
 }
-
-
 .carousel-container {
     position: relative;
     max-width: 481px;
@@ -286,6 +288,53 @@ p.homeP {
     padding: 30px;
     font-size: 13px;
 }
+    /* TABLET */
+    @media (min-width: 481px) {
+        .imgfitHome {
+            width: 70%;
+            margin: auto;
+            display: block;
+        }
+        .carousel-container {
+            max-width: 1024px;
+        }
+        .sliderCard {
+            width: 50%;
+            padding: 10px;
+        }
+        .sliderH3 {
+            top: -50px;
+            padding: 10px;
+            font-size: 18px;
+        }
+    }
+    
+    /* DESKTOP */
+    @media (min-width: 1025px) {
+        .imgfitHome {
+            width: 40%;
+            margin: auto;
+            display: block;
+        }
+        .carousel-container {
+            max-width: 1281px;
+        }
+        .sliderCard {
+            width: 33.3%;
+            padding: 30px;
+        }
+        .sliderH3 {
+            top: -50px;
+            padding: 15px;
+            font-size: 24px;
+        }
+        .btnPrev {
+            left: 8px;
+        }
+        .btnNext {
+            right: 8px;
+        }
+    }
 /* HOME PAGE */
 
 
@@ -293,11 +342,6 @@ p.homeP {
 
 
 /* BLOGS */
-/* .overview {
-    display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 600px 1fr;
-} */
 #h1 {
     display: block;
     text-align: center;
@@ -311,9 +355,9 @@ p.homeP {
     margin: 0 30px 20px 30px;
 }
 .blogsContainer {
+    flex-basis: 90%;
     margin: 0 auto;
     margin-top: 35px;
-    max-width: 300px;
     box-shadow: var(--main-bg-color-light) 0px 1px 3px, var(--main-bg-color-light) 0px 1px 2px;
 }
 .blogsContainer:hover {
@@ -334,18 +378,16 @@ p.homeP {
     font-style: italic;
     font-size: 12px;
 }
-
-
 .moreBlogs {
-    display: grid;
-    flex-direction: column;
+    display: flex;
     justify-self: center;
     align-items: center;
-    width: 200px;
     text-align: center;
+    width: 100%;
+    height: 100px;
 }
-
 #loadMore {
+    align-items: center;
     background-color: var(--main-bg-color);
     color: #fff;
     text-decoration: none;
@@ -353,28 +395,26 @@ p.homeP {
     border:none; 
     border-radius:8px; 
     padding:15px;
-    min-height:30px; 
-    min-width: 120px;
-}
-/* #load-more {
-    width: calc((100% / 3) - 8px);
-    padding: 16px;
-    background-color: white;
-    border: none;
+    margin-bottom: 8px;
     cursor: pointer;
-    transition: all 200ms ease-in-out;
-    border-radius: 3px;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15rem;
 }
-#load-more:not([disabled]):hover {
-    box-shadow: 0 1px 9px rgba(0, 0, 0, 0.2);
+#loadMore[disabled] {
+    background-color: #eaeaea;
+    cursor: not-allowed;
 }
-#load-more[disabled] {
-    background-color: #eaeaea !important;
-} */
-  
+    /* TABLET */
+    @media (min-width: 481px) {
+        .blogsContainer {
+            flex-basis: 43%;        /* max 3 produkter på en rad, med space*/
+        }
+    }
+        /* DESKTOP */
+    @media (min-width: 1025px) {
+        .blogsContainer {
+            flex-basis: 30%;        /* max 3 produkter på en rad, med space*/
+        }
+    }
+
 /* BLOGS */
 
 
@@ -509,55 +549,12 @@ p.homeP {
 
 
 
-
-
-
     /* TABLET */
 @media (min-width: 481px) {
-    .imgfitHome {
-        width: 70%;
-        margin: auto;
-        display: block;
-    }
-    .carousel-container {
-        max-width: 1024px;
-    }
-    .sliderCard {
-        width: 50%;
-        padding: 10px;
-    }
-    .sliderH3 {
-        top: -50px;
-        padding: 10px;
-        font-size: 18px;
-    }
+
 }
-
-
 
     /* DESKTOP */
 @media (min-width: 1025px) {
-    .imgfitHome {
-        width: 40%;
-        margin: auto;
-        display: block;
-    }
-    .carousel-container {
-        max-width: 1281px;
-    }
-    .sliderCard {
-        width: 33.3%;
-        padding: 30px;
-    }
-    .sliderH3 {
-        top: -50px;
-        padding: 15px;
-        font-size: 24px;
-    }
-    .btnPrev {
-        left: 8px;
-    }
-    .btnNext {
-        right: 8px;
-    }
+
 }

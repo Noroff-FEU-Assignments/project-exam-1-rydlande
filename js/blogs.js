@@ -15,8 +15,7 @@ function toggleMenu() {
     closeIcon.style.display = "block";
     menuIcon.style.display = "none";
   }
-}
-
+};
 hamburger.addEventListener("click", toggleMenu);
 
 menuItems.forEach( 
@@ -30,20 +29,23 @@ menuItems.forEach(
 
 // LOADER //
 const loader = document.getElementById("loading");
+const moreBlogs = document.getElementById("moreBlogs");
 
 function displayLoading() {
   loader.style.display = 'block';
-}
+  moreBlogs.style.display = 'none';
 
+};
 function hideLoading() {
   loader.style.display = 'none';
+  moreBlogs.style.display = 'block'
 }
 // LOADER //
 
 
 
 // MAIN //
-const url = "https://exam1.serialsnoozer.no/wp-json/wp/v2/posts?per_page=15"
+const url = "https://exam1.serialsnoozer.no/wp-json/wp/v2/posts?per_page=100"
 
 const loadMoreButton = document.getElementById('loadMore');
 const overview = document.getElementById('overview');
@@ -69,6 +71,7 @@ const getBlogs = () => {
       console.log(data)
     });
 };
+
 
 function renderBlogs() {
   const showBlogs = allBlogs.slice(startIndex, startIndex + blogsPerPage);
@@ -96,11 +99,14 @@ function renderBlogs() {
 
   overview.insertAdjacentHTML('beforeend', blogHTML);       // show the next 6 posts under the existing ones
 
+
+
   const numShowBlogs = Math.min(startIndex + blogsPerPage, allBlogs.length);
   cardCount.textContent = numShowBlogs;
   cardTotal.textContent = allBlogs.length;
 
   if (numShowBlogs === allBlogs.length) {
+    loadMoreButton.classList.add("disabled");
     loadMoreButton.disabled = true;
   } else {
     loadMoreButton.disabled = false;
