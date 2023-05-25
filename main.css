@@ -1,10 +1,10 @@
-/* STANDARDS */
+@import './css/header.css';
+@import './css/footer.css';
 
 /* Cormorant */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 /* Open Sans */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
 
 * {
   margin: 0;
@@ -21,20 +21,6 @@
     --text-color-black: #000;
     --text-color-main: #FB5F4F;
 }
-/* html, body {
-    height: 100%;
-}
-body {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Cormorant';
-}
-.wrapper {
-    flex: 1 0 auto;
-}
-.footer {
-    flex-shrink: 0;
-} */
 html, body {
     width: 100%;
 }
@@ -67,9 +53,6 @@ body > footer {
 .wrapper {
     width: 100vw;
 }
-/* STANDARDS */
-
-
 
 
 /* LOADER */
@@ -90,120 +73,6 @@ body > footer {
 /* LOADER */
 
 
-
-
-
-/* NAVBAR */
-.nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px;
-    position: sticky;
-    top: 0;
-    background: var(--main-bg-color);
-}
-.siteName {
-    text-decoration: none;
-    color: var(--text-color-white);
-    font-weight: bold;
-    margin-left: 16px;
-}
-.menuItem {
-    font-size: 30px;
-    color: var(--text-color-white);
-    text-decoration: none;
-    margin: 30px 63px;
-    line-height: 2;
-}
-.menuItem:hover {
-    text-decoration: underline;
-}
-.hamburger {
-    z-index: 100;
-    right: 16px;
-    margin-right: 16px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    padding: 0 8px 0 8px;
-}
-.menuIcon {
-    color: var(--text-color-white);
-}
-.closeIcon {
-    display: none;
-    color: var(--text-color-white);
-}
-.menu {
-    position: fixed;
-    transform: translateY(-100%);
-    transition: transform 0.2s;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 99;
-    background: var(--main-bg-color);
-    color: var(--text-color-white);
-    list-style: none;
-    padding-top: 64px;
-}
-.showMenu {
-    transform: translateY(0);
-}
-/* NAVBAR */
-
-
-
-
-
-/* FOOTER */ 
-.subscribe {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--main-bg-color-light);
-    padding: 32px;
-    margin-bottom: 8px;
-}
-.subscibe-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 16px;
-    margin-top: 8px;
-}
-#email {
-    width: 250px;
-    height: 24px;
-    padding: 20px 16px;
-    margin-bottom: 20px;
-    background-color: var(--main-bg-color);
-    border: 0.5px solid grey;
-}
-#submit {
-    border-style: none;
-    padding: 8px 5px;
-    background-color: var(--main-bg-color);
-    border-radius: 5px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-}
-.some {
-    display: flex;
-    flex-direction: row;
-} 
-.someCircle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    text-decoration: none;
-    margin-left: 8px;
-    margin-bottom: 8px;
-    height: 32px;
-    width: 32px;
-}
-/* FOOTER */ 
 
 
 
@@ -376,7 +245,7 @@ p.homeP {
     color: #8a8a8a;
     font: 'Open Sans';
     font-style: italic;
-    font-size: 12px;
+    font-size: 11px;
 }
 .moreBlogs {
     display: flex;
@@ -413,6 +282,9 @@ p.homeP {
         .blogsContainer {
             flex-basis: 30%;        /* max 3 produkter på en rad, med space*/
         }
+        .published {
+            font-size: 13px;
+        }
     }
 
 /* BLOGS */
@@ -422,18 +294,143 @@ p.homeP {
 
 
 /* BLOG SPECIFIC */
+.featuredImg {
+    cursor: zoom-in;
+    width: 100vw;
+    height: 200px;
+    filter: brightness(70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+#img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;       
+}
+.backButton {
+    margin-left: 8px;
+    font-size: 11px;
+    color: #8a8a8a;
+    text-decoration: none;
+}
+.backButton:hover {
+    color: var(--main-bg-color);
+}
 .blogContent {
-    padding: 40px;
+    padding: 10px 20px;
 }
 .blogTitle {
     text-align: center;
-    font-size: 32px;
+    font-size: 24px;
 }
 .blogText {
-    padding: 15px;
     font-family: 'Open Sans';
-    font-size: 16px;
+    font-size: 14px;
+    padding: 0 15px;
 }
+.publishedSpecific {
+    margin: 8px 0 30px 0;
+    text-align: center;
+    font-weight: lighter;
+    color: #8a8a8a;
+    font-size: 11px;
+}
+.modalImg {
+    width: 100%;
+}
+.modal {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    top: 40%;
+    left: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+    z-index: 2;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+.hidden {
+    display: none;
+}
+
+    /* TABLET */
+    @media (min-width: 481px) {
+        .featuredImg {
+            height: 250px;
+        }
+        .backButton {
+            font-size: 15px;
+        }
+        .blogContent {
+            padding: 10px 30px;
+        }
+        .blogTitle {
+            font-size: 32px;
+        }
+        .blogText {
+            font-size: 16px;
+            padding: 0 10% 20px 10%;
+        }
+        .publishedSpecific {
+            margin: 12px 0 45px 0;
+            font-size: 13px;
+        }
+        .modal {
+            width: 400px;
+            height: 400px;
+            top: 45%;
+            margin-top: -200px;
+            margin-left: -200px;
+        }
+    }
+        /* DESKTOP */
+    @media (min-width: 1025px) {
+        .featuredImg {
+            height: 300px;
+            margin-bottom: 15px;
+        }
+        .backButton {
+            font-size: 18px;
+            margin-left: 15px;
+        }
+        .blogContent {
+            padding: 15px 40px;
+        }
+        .blogTitle {
+            font-size: 40px;
+        }
+        .blogText {
+            font-size: 18px;
+            padding: 0 18% 30px 18%;
+        }
+        .publishedSpecific {
+            margin: 15px 0 60px 0;
+            font-size: 16px;
+        }
+        .modal {
+            width: 550px;
+            height: 550px;
+            top: 50%;
+            margin-top: -275px;
+            margin-left: -275px;
+        }
+    }
 /* BLOG SPECIFIC */
 
 

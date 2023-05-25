@@ -1,0 +1,47 @@
+
+/* FOOTER */ 
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-bg-color-light);
+    padding: 32px;
+    margin-bottom: 8px;
+}
+.subscibe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 16px;
+    margin-top: 8px;
+}
+#email {
+    width: 250px;
+    height: 24px;
+    padding: 20px 16px;
+    margin-bottom: 20px;
+    background-color: var(--main-bg-color);
+    border: 0.5px solid grey;
+}
+#submit {
+    border-style: none;
+    padding: 8px 5px;
+    background-color: var(--main-bg-color);
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.some {
+    display: flex;
+    flex-direction: row;
+} 
+.someCircle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    height: 32px;
+    width: 32px;
+}

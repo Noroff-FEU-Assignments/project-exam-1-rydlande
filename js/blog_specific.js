@@ -19,88 +19,103 @@ function toggleMenu() {
 
 hamburger.addEventListener("click", toggleMenu);
 
-menuItems.forEach( 
-  function(menuItem) { 
-    menuItem.addEventListener("click", toggleMenu);
-  }
-)
+menuItems.forEach(function (menuItem) {
+  menuItem.addEventListener("click", toggleMenu);
+});
 // NAVBAR //
 
 
 
+// LOADER //
+const loader = document.getElementById("loading");
+
+function displayLoading() {
+  loader.style.display = "block";
+}
+function hideLoading() {
+  loader.style.display = "none";
+}
+// LOADER //
 
 
 
-
-// MAIN //
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-const main = document.querySelector("main");
-const head = document.querySelector("head");
 const id = params.get("id");
-
 const url = `https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts/${id}?_embed=wp:featuredmedia`;
 
-  // fetch(url)
-  //   .then(res => res.json())
-  //   .then((data) => {
-  //     console.log(data)
-  //   });
+const main = document.querySelector("main");
+const head = document.querySelector("head");
+const img = document.querySelector(".featuredImg");
+const textContent = document.querySelector(".content");
+
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
 
 
-  const getBlogs = () => {
-    fetch(url)
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data)
+function getBlogs() {
+  displayLoading();
 
-        const {id, date, title, rendered, content} = data;
-        var media = data._embedded["wp:featuredmedia"][0].source_url;
-        const d = new Date(date).toLocaleDateString('en-EU', {
-          day: 'numeric',
-          month: 'long',
-          year: 'numeric',
-        });
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
 
+      const { date, title, content } = data;
+      const media = data._embedded["wp:featuredmedia"][0].source_url;
+      const d = new Date(date).toLocaleDateString("en-EU", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
 
-        // BLOG TITLE TO HEAD
-        const BlogTitle = document.createElement("title");
-        BlogTitle.innerHTML = `SerialSnoozer | ` + title.rendered;
-        head.appendChild(BlogTitle);
+      // BLOG TITLE TO HEAD
+      const BlogTitle = document.createElement("title");
+      BlogTitle.innerHTML = `SerialSnoozer | ` + title.rendered;
+      head.appendChild(BlogTitle);
 
+      // BLOG CONTENT
+      img.innerHTML = `<img src="${media}" alt="Featured image to ${title.rendered}" id="img" class="featuredImg" >`;
+      textContent.innerHTML = `
+      <a href="./blogs.html" class="backButton">← All blogs</a>
+      <div class="blogContent">
+            <h2 class="blogTitle">${title.rendered}</h2>
+            <div class="blogText">
+              <p class="publishedSpecific">${d}</p>
+              <p">${content.rendered}</p>
+            </div>
+          </div>`;
 
-        // BLOG CONTENT
-        main.innerHTML = `<div>
-        <div class="featuredImg">
-          <img src="${media}" alt="" class="imgfitPage">
-        </div>
-        <div class="blogContent">
-          <h2 class="blogTitle">${title.rendered}</h2>
-          <div class="blogText">
-          <p class="published">${d}</p>
-          <p>${content.rendered}</p>
-          </div>
-        </div>
-      </div>`
+      hideLoading();
 
-      var clicked;
-        function clicked() {
-            alert("Image clicked");
-            }
-        function starter() {
-            media = document.getElementById("image1");
-            image.onclick = clicked;
-            }    
-        window.onload = starter;
-      })
-
-      .catch((e) => {
-        main.innerHTML = `Woops! Something went wrong... Please try again later.`
-        console.log(e)
+      modal.innerHTML = `<img src="${media}" alt="Featured image to ${title.rendered}" class="modalImg"/>`
+      
     })
-  }
+    .catch((e) => {
+      main.innerHTML = `Woops! Something went wrong... Please try again later.`;
+      console.log(e);
+    });
+}
 
-  getBlogs();
-// MAIN //
+getBlogs();
+
+
+// MODAL //
+const closeModal = function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+modal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});
+
+const openModal = function () {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+img.addEventListener("click", openModal);

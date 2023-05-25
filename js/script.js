@@ -98,7 +98,7 @@ const renderBlogs = (data) => {
       const { id, title, jetpack_featured_media_url } = element;
 
       const blogLink = document.createElement("a");
-      blogLink.href = `./html/blog_specific.html?id=${id}`;
+      blogLink.href = `./blog_specific.html?id=${id}`;
       blogLink.classList.add("sliderCard");
 
       const blogImage = document.createElement("img");

@@ -1,51 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="main.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Exam1" />
-    <script src="https://kit.fontawesome.com/0c38094ff5.js" crossorigin="anonymous"></script>
-    <title>Blogs</title>
-    <script src="../js/blogs.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/0c38094ff5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/blog_specific.js" type="module" defer></script>
   </head>
 
   <body>
     <header class="nav">
       <div>
-        <a class="siteName" href="../index.html">SerialSnoozer</a>
+        <a class="siteName" href="index.html">SerialSnoozer</a>
       </div>
       <ul class="menu">
-        <li><a class="menuItem" href="../index.html">Home</a></li>
-        <li><a class="menuItem" href="./blogs.html">Blogs</a></li>
-        <li><a class="menuItem" href="./about.html">About us</a></li>
-        <li><a class="menuItem" href="./contact.html">Contact</a></li>
+        <li><a class="menuItem" href="index.html">Home</a></li>
+        <li><a class="menuItem" href="blogs.html">Blogs</a></li>
+        <li><a class="menuItem" href="about.html">About us</a></li>
+        <li><a class="menuItem" href="contact.html">Contact</a></li>
       </ul>
       <button class="hamburger">
-        <i class="menuIcon"
-          ><i class="fa-solid fa-ellipsis-vertical" ></i
-        ></i>
+        <i class="menuIcon"><i class="fa-solid fa-ellipsis-vertical"></i></i>
         <i class="closeIcon"><i class="fa-solid fa-xmark"></i></i>
       </button>
     </header>
 
-    <main class="wrapper">
-      <div id="h1"><p>All blogs</p></div>      
+     <section class="modal hidden"></section> 
+     <div class="overlay hidden"></div>
 
-      <div class="overview" id="overview"></div>
+    <main class="wrapper">
 
       <div id="loading" class="loading"><i class="fa-sharp fa-solid fa-martini-glass-empty fa-fade fa-2xl" style="color: var(--main-bg-color-light);"></i></div>
-      
-      <div id="container" class="blogContainer"></div>
 
-      <div id="moreBlogs" class="moreBlogs">
-        <button id="loadMore">Load more</button><br/>
-        <span class="showing">Showing 
-          <span id="cardCount"></span> of 
-          <span id="cardTotal"></span> cards      
-        </span>
-      </div>
+      <div class="featuredImg"></div>
+      <div class="content"></div>
     </main>
+
 
     <footer class="footer">
       <div class="subscribe">
@@ -55,7 +49,7 @@
 
       <form class="subscibe-form">
         <span id="emailMessage"></span></br>
-        <input id="email" type="text" placeholder="Your email adress"/>
+        <input id="email" type="text" placeholder="Your email adress"/> 
         <div>
           <input id="submit" type="submit" value="Sign me up!">
         </div>
@@ -70,3 +64,4 @@
     </footer>
   </body>
 </html>
+
