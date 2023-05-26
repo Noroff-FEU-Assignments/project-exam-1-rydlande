@@ -42,7 +42,7 @@ function hideLoading() {
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-const url = `https://www.exam1.serialsnoozer.no/wp-json/wp/v2/posts/${id}?_embed=wp:featuredmedia`;
+const url = `https://exam1.serialsnoozer.no/wp-json/wp/v2/posts/${id}?_embed=wp:featuredmedia`;
 
 const main = document.querySelector("main");
 const head = document.querySelector("head");
