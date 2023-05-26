@@ -22,6 +22,7 @@ hamburger.addEventListener("click", toggleMenu);
 
 // FETCH
 const url = "https://exam1.serialsnoozer.no/wp-json/wp/v2/posts?per_page=100";
+const carousel = document.getElementById("carousel");
 const carouselList = document.querySelector(".carousel-list");
 const prevButton = document.querySelector(".btnPrev");
 const nextButton = document.querySelector(".btnNext");
@@ -68,9 +69,7 @@ const getBlogs = () => {
       loader.style.display = "none";
     })
     .catch((e) => {
-      const main = document.querySelector("main.wrapper");
-      main.innerHTML = `Woops! Something went wrong... Please try again later.`;
-      console.log(e);
+      carousel.innerHTML = `Woops! Something went wrong... Please try again later.`;
       loader.style.display = "none";
     });
 };
@@ -82,7 +81,7 @@ const renderBlogs = (data) => {
 
   if (window.innerWidth < 481) {
     numberOfPosts = 1;
-  } else if (window.innerWidth < 1024) {
+  } else if (window.innerWidth < 1025) {
     numberOfPosts = 2;
   } else {
     numberOfPosts = 3;

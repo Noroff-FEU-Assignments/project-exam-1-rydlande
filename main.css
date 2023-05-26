@@ -1,5 +1,6 @@
 @import './css/header.css';
 @import './css/footer.css';
+@import './test/test.css';
 
 /* Cormorant */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
@@ -80,12 +81,13 @@ body > footer {
 /* HOME PAGE */
 .imgfitHome {
     width: 100%;
+    margin: auto;
     display: block;
 }
 .homeImg {
     background-color: var(--main-bg-color-light); 
 }
-.carousel-container {
+/* .carousel-container {
     position: relative;
     max-width: 481px;
     height: 35%;
@@ -148,7 +150,7 @@ body > footer {
 }
 .btnNext {
     right: 3px;
-}
+} */
 .homeDescription {
     background-color: var(--main-bg-color-light);  
     color: var(--text-color-white);
@@ -164,7 +166,7 @@ p.homeP {
     font-size: 13px;
 }
     /* TABLET */
-    @media (min-width: 481px) {
+    /* @media (min-width: 481px) {
         .imgfitHome {
             width: 70%;
             margin: auto;
@@ -186,9 +188,9 @@ p.homeP {
     @media (min-width: 753px) {
         .carousel-container {
             height: 42%;
-    }}
+    }} */
     /* DESKTOP */
-    @media (min-width: 1025px) {
+    /* @media (min-width: 1025px) {
         .imgfitHome {
             width: 40%;
             margin: auto;
@@ -213,7 +215,7 @@ p.homeP {
         .btnNext {
             right: 8px;
         }
-    }
+    } */
 /* HOME PAGE */
 
 
