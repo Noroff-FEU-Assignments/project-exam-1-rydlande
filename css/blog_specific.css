@@ -72,7 +72,6 @@
 .hidden {
     display: none;
 }
-
     /* TABLET */
     @media (min-width: 481px) {
         .featuredImg {

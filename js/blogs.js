@@ -67,8 +67,6 @@ const getBlogs = () => {
       allBlogs = data;
       renderBlogs();
       hideLoading();
-
-      console.log(data)
     });
 };
 

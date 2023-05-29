@@ -59,7 +59,6 @@ function getBlogs() {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
 
       const { date, title, content } = data;
       const media = data._embedded["wp:featuredmedia"][0].source_url;
