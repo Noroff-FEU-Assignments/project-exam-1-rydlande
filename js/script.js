@@ -20,6 +20,7 @@ hamburger.addEventListener("click", toggleMenu);
 
 
 
+
 // FETCH
 const url = "https://exam1.serialsnoozer.no/wp-json/wp/v2/posts?per_page=100";
 const carousel = document.getElementById("carousel");

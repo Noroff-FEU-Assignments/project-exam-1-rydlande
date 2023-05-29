@@ -90,20 +90,6 @@ p.homeP {
     padding: 30px;
     font-size: 13px;
 }
-.homeDescription {
-    background-color: var(--main-bg-color-light);  
-    color: var(--text-color-white);
-    padding: 16px;
-}
-h1.homeH1 {
-    font-size: 32px;
-    text-align: center;
-}
-p.homeP {
-    font-family: 'Open Sans';
-    padding: 30px;
-    font-size: 13px;
-}
     /* TABLET */
     @media (min-width: 481px) {
         .imgfitHome {
