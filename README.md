@@ -1,67 +1,59 @@
-## Project Exam 1
+## Raport
 
-## Goal
+Da jeg først leste gjennom eksamensoppgaven startet idemyldringen om hvilket tema jeg ville at blogge nskulle ha. De første dagene valgte jeg å lage en tidsplan, en trello board og en prototype i Figma, alt før jeg valgte tema. Da tema ble valgt til bartending og drinker ble målgruppen snervet inn til unge voksne (alder 20-35), de som interesserer seg for mat og drikke og da kanskje ikke har så mye kjennskap og erfaring fra før. Da eksamen var i gang startet laget jeg en oversikt over de neste ukene. Første uken skulle brukes til strukturering, prototype og få på plass elementene jeg trengte (som f.eks å lage alle blog postsene), uke nr 2 og 3 var satt av til programmering av designet jeg laget og uke 4 og 5 var da jeg skulle koble opp siden til Hotjar og samle inn tilbakemeldinger og forbedre brukervennlighet og design deretter.
 
-To put into practice the skills learned over your first year of studies.
+## Design
 
-## Brief
-You have been tasked with creating a blog site. You can choose the design and topics covered on the blog, but it should have at least the following pages:
--	Home page
--	About page
--	List of blog posts
--	Blog post specific pages
--	Contact page.
+<!-- What went well on the project: -->
 
-### Home Page
-The home page should have a ‘Latest Posts’ section which uses a carousel (slider) for users to click to view more posts. For example, by default the user can see four posts, then they can click an arrow on the right to view the next four posts, and click it again to view the next four posts. The user can also click back to view results they had previously seen. This must be implemented for desktop at least, but if you want a simpler layout for mobile, you can change it from being in a carousel.
+Jeg ble stort sett fornøyd med designet mitt og fargevalg. Jeg lagde noen fargepaletter jeg øsnket å bruke, men har holdt meg til en farge i flere nyanser for at å holde designet rent og ryddig. Jeg har også testet ut siden for å se hvordan den ser ut for fargeblinde.
 
-### Blog Page
+<!-- What was difficult/didn’t go well on the project/What would you do differently next time: -->
 
-The blog posts page should show the first 10 blogs, and the user should click to view more results which then show underneath the first 10 blogs.
+Jeg skulle selv ønsket å ha hatt en enda renere look med bruk av 2-3 forksjellige farger, istedenfor bare forskjellige nyanser. Så dette er noe jeg har lyst å prøve å bli bedre på til neste prosjekt. I retrospekt ble fargen litt for rosa.
 
-### Blog Specific Page
+## Technical
 
-The content of the blog specific page should be dynamically built using a query string parameter based on whatever link the user clicked. The title of the blog specific page should change based on the blog that has been clicked on e.g. “My Blog | An Article I Wrote”.
+<!-- What went well on the project: -->
 
-If images on the blog post page are clicked, a modal should appear giving the user a bigger view of that image. Clicking outside the image should hide the modal.
+Det var noen ting som tok mye lengre tid å finne ut av enn andre. Det som har tatt lengst tid er å av hvordan jeg kan få koden i JavaScript til å fungere optimalt, der jeg har diskutert løsningsforslag med medelever, lest kode fra tidligere innleveringer eller bare google meg frem til det jeg har strevd med.
 
-### Contact page
+I tillegg til å bruke Hotjar spurte jeg de rundt meg om å bruke nettsiden, etter litt tilbakemeldinger endte jeg opp med å legge inn mer white space der det var mye tekst (f.eks. på about siden), det ble også byttet fra svart til hvit skrift der det var mørk fersken bakgrunn, jeg gjorde last mer-knappen grå når det ikke var flere sider å laste og forandret kortene i slideren til å være like som blog siden.
 
-Create a contact us page, there should be 4 textboxes on this page.
--	Name (Should be more than 5 characters long)
--	Email address (Must be a valid email address)
--	Subject (Should be more than 15 characters long)
--	Message content (Should be more than 25 characters long)
+Jeg brukte ikke spesielt mye tid på innholdet til blogsidene, men igjen så hadde jeg ikke lyst å bruke lorum ipsum, så da spurte jeg ChatGPT til å lage innhold til alle de forskjellige blogtitlene.
 
-Please use JavaScript for validation, show error messages if the values in the textboxes do not meet the requirements.
+Jeg valgte også å vise de første 6 blogginnleggene på blogs.html fordi det så bedre ut med flex-wrap. På kontaktskjema har jeg valgt å ikke ha minimumskrav på navn fordi jeg ville prøve meg på litt flere syntaks.
 
-### WordPress
+Jeg har også vørt inne å forandret litt på en php fil, fordi jeg ikke fikk \_embedded"wp:featuredmedia" url-en til å fungere i starten. Bruker nå "jetpack_featured_media_url" for å hente media på 2 av 3 fetch, istedenfor \_embedded"wp:featuredmedia"
 
-The content for your website will be stored on a WordPress installation used as a Headless CMS. It’s important to note that we are only using WordPress to provide an API and add content for the blog. You should not submit a link to a WordPress site, but build your website using HTML, CSS and JavaScript and making a call to the WordPress REST API to fetch the data. 
+<!-- What was difficult/didn’t go well on the project/What would you do differently next time: -->
 
-The project has two aspects:
--	API from your WordPress installation
--	Your website built with HTML, CSS and JavaScript
+Synes det var vanskelig å lage slideren, hadde tenkt å ha en karusell på mobil versjon, men endte opp med å la vær for å gjøre det litt enklere for meg selv. En ting jeg ikke er så fornøyd med er at når man bytter oppløsning/format, så må man reloade siden for å få rett antall blogger på slideren. Skulle ønske den justere seg uten å måtte laste inn på nytt.
 
-You will need to add at least 12 blogs for your website. You can use lorem ipsum for paragraphs if you need, but headings, images etc. should all make sense.
+Hadde også lagt til en liten oversikt over hvilken side man er på i slideren, slik at man tydelig ser at den går i sirkel og du kommer tilbake til første side. Dette fikk jeg ikke tid til da jeg kom på at det var noe jeg ønsket å ha med.
 
-Note that this is an exam, and therefore tutor support will be limited as per the study plan.
+Jeg burde også ha forandret litt på fargene som er i teksten på "homeImg", siden den ikke har optimal lesbarhet.
 
-## Level 1 Process
+## WCAG guidelines, content management and SEO
 
-1.	Decide on the theme for the blog you’re going to make
-2.	Create a prototype of the website
-3.	Install WordPress on your web host and add the blogs on the admin panel. 
-4.	Use the GitHub repo created by GitHub Classroom for your files and deploy to Netlify
-5.	Build your website using HTML, CSS and JavaScript making a call to the WordPress REST API to fetch your data.
-6.	Install Hotjar on your website.
-7.	Ask users to test your website, and adjust based on their feedback and any insights from Hotjar.
-8.	Write a report documenting your project (template provided in this repository).
-9.	Submit your report as a PDF and a link to both your Netlify deployment and your GitHub repo.
- 
-## Level 2 Process (optional)
+<!-- What went well on the project -->
 
-1.	You can try adding a sort, filter, or search to the blog posts page allowing users to find the blog post more easily that they’re looking for. 
-2.	Post the data from the contact form to WordPress so you have the details saved.
-3.	Allow users to submit comments on a blog post, and post this data to WordPress
+Etter å ha brukt Google Lighthouse for å få en rapport på WCAG, CMS og SEO endret jeg på et par ting. Det første var å dele opp css filene mine på en annen måte, slik at det lastes mindre content per side. Jeg brukte &display=swap på fontene (burde brukt @font-face istedenfor @import). La inn "defer" på alle scripts, fjernet Hotjar script og gjort alle bilder mindre.
 
+<!-- What was difficult/didn’t go well on the project/What would you do differently next time: -->
+
+Jeg burde brukt WebP eller SVG filer til bildene, evt hatt responsive bilder der jeg kunne hatt flere versjoner av bilde til forskjellige viewports. Når jeg først delte opp css-filene burde jeg også brukt Media Attribute for å kunne laste inn siden enda raskere.
+
+Alt i alt er jeg fornøyd med eksamen. Det er noen ting jeg kunne gjort annerledes og har fortsatt mye å lære, men har utført oppgaven etter kravene som ble gitt. Tidsplanlegging har gått overraskende bra og jeg har gjennom hele perioden følt at jeg har hatt greit med tid, selv om det ble noen lange dager på skolen innimellom. Jeg hadde nokk jobbet enda mer med Media Queries og prøvd meg på Level 2, om jeg hadde hatt mer tid. Hadde jeg følt tidlig i prossessen at jeg hadde god tid hadde jeg nokk gjort noen større forandringer på designet for en mer profesjonell look. Prøvde meg også på å få kontaktskjema til å fungere, men da jeg fikk litt dårlig tid la jeg det fra meg.
+
+## Referanser
+
+    https://unsplash.com/  - free pictures
+
+    ChatGPT – made content to blog posts
+
+    https://fonts.google.com/ - font
+
+    I usually look at my old code if I like the way something works or looks from other assignment and forgot how to do, so some of the code is similar to old projects.
+
+    https://www.w3schools.com/, https://css-tricks.com/ and https://developer.mozilla.org/en-US/ - used it for the HTML and CSS code i forgot, like different styles and structure.
