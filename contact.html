@@ -40,25 +40,24 @@
         <p>Get in touch</p>
       </div>
       <form id="contactForm" class="contactContainer" action="form-handler.php" method="post">
-
         <span id="successMessage" class="contactTrue"></span>
-
-
-        <input type="text"  placeholder="Name"          id="contactName"    class="contactForm">
+        
+        <input type="text" placeholder="Name" id="contactName" class="contactForm" name="name">
         <span id="nameMessage" class="contactFalse"></span>
-
-        <input type="email" placeholder="Email adress"  id="contactEmail"   class="contactForm" name="email">
+        
+        <input type="email" placeholder="Email address" id="contactEmail" class="contactForm" name="email">
         <span id="emailMessage" class="contactFalse"></span>
-
-        <input type="text"  placeholder="Subject"       id="contactSubject" class="contactForm">
+        
+        <input type="text" placeholder="Subject" id="contactSubject" class="contactForm" name="subject">
         <span id="subjectMessage" class="contactFalse"></span>
-
-        <span class="contactQ">What do you wanna ask us?</span>
+        
+        <span class="contactQ">What do you want to ask us?</span>
         <span id="contentMessage" class="contactFalse"></span>
-        <textarea type="text" rows="10" placeholder="Message..." id="formContent" class="contactForm"></textarea>
-
-        <button   type="submit" class="contactBtn">Send</button> 
+        <textarea rows="10" placeholder="Message..." id="formContent" class="contactForm" name="message"></textarea>
+        
+        <button type="submit" class="contactBtn">Send</button>
       </form>
+      
     </main>
 
     <footer class="footer">
