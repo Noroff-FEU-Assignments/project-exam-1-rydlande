@@ -26,7 +26,6 @@ menuItems.forEach(
 )
 // NAVBAR //
 
-
 // FORM //
 const form = document.querySelector("form#contactForm");
 form.addEventListener("submit", validateForm);
@@ -40,6 +39,7 @@ const nameMessage = document.querySelector("#nameMessage");
 const subjectMessage = document.querySelector("#subjectMessage");
 const emailMessage = document.querySelector("#emailMessage");
 const contentMessage = document.querySelector("#contentMessage");
+const successMessage = document.querySelector("#successMessage");
 
 
 function validateForm(e) {
