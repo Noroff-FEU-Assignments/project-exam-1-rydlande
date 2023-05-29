@@ -1,16 +1,17 @@
 .nav {
     display: flex;
     justify-content: space-between;
-    padding: 16px;
+    padding: 8px;
     position: sticky;
     top: 0;
     background: var(--main-bg-color);
+    height: 60px;
 }
-.siteName {
-    text-decoration: none;
-    color: var(--text-color-white);
-    font-weight: bold;
-    margin-left: 16px;
+.headerLogo {
+    padding: 4px;
+}
+.headerLogoImg {
+    width: 80px;
 }
 .menuItem {
     font-size: 30px;
@@ -24,7 +25,6 @@
 }
 .hamburger {
     z-index: 100;
-    right: 16px;
     margin-right: 16px;
     border: none;
     background: none;
@@ -46,12 +46,38 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 99;
     background: var(--main-bg-color);
     color: var(--text-color-white);
-    list-style: none;
     padding-top: 64px;
 }
 .showMenu {
     transform: translateY(0);
 }
+   /* TABLET */
+   @media (min-width: 481px) {
+    .menuItem {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+   }
+    /* DESKTOP */
+    @media (min-width: 1025px) {
+        .menuItem {
+            font-size: 20px;
+            margin: 0 20px;
+        }
+        .hamburger {
+            display: none;
+        }
+        .menu {
+            display: flex;
+            flex-direction: row;
+            text-align: right;
+            position: static;
+            transform: translateY(0);
+            transition: none;
+            list-style: none;
+            padding-top: 0;
+        }
+    }

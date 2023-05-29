@@ -12,13 +12,15 @@
       crossorigin="anonymous"
     ></script>
     <title>Contact us</title>
-    <link rel="icon" href="../media/logo-head1.png" type="image/icon type">
+    <link rel="icon" href="./media/logo-head1.png" type="image/icon type">
   </head>
 
   <body>
     <header class="nav">
-      <div>
-        <a class="siteName" href="index.html">SerialSnoozer</a>
+      <div class="headerLogo">
+        <a class="siteName" href="index.html">
+          <img src="./media/headerLogo.png" alt="Serial Snoozer (logo)" class="headerLogoImg">
+        </a>
       </div>
       <ul class="menu">
         <li><a class="menuItem" href="index.html">Home</a></li>
@@ -27,8 +29,8 @@
         <li><a class="menuItem" href="contact.html">Contact</a></li>
       </ul>
       <button class="hamburger">
-        <i class="menuIcon"><i class="fa-solid fa-ellipsis-vertical"></i></i>
-        <i class="closeIcon"><i class="fa-solid fa-xmark"></i></i>
+        <i class="menuIcon"><i class="fa-solid fa-bars fa-xl" style="color: var(--text-color-white)"></i></i>
+        <i class="closeIcon"><i class="fa-solid fa-xmark fa-2xl"></i></i>
       </button>
     </header>
 
@@ -58,22 +60,22 @@
     <footer class="footer">
       <div class="subscribe">
 
-      <p style="font-weight: bold;">Subscribe!</p>
+      <p class="subscribeTitle">Subscribe!</p>
       <p>Sign up for out newsletter</p>
 
-      <form class="subscibe-form">
+      <form class="subscibeForm">
         <span id="emailMessage"></span></br>
-        <input id="email" type="text" placeholder="Your email adress"/> 
+        <input id="subscribeEmail" type="text" placeholder="Your email adress"/>
         <div>
-          <input id="submit" type="submit" value="Sign me up!">
+          <button id="subscribeBtn" type="submit">Sign me up</button>
         </div>
       </form>
     </div>
 
     <div class="some">
-      <a class="someCircle" href="https://www.facebook.com/"><i class="fa-brands fa-facebook" style="color: var(--main-bg-color);"></i></a>
-      <a class="someCircle" href="https://www.instagram.com/"><i class="fa-brands fa-instagram" style="color: var(--main-bg-color);"></i></a>
-      <a class="someCircle" href="https://twitter.com/"><i class="fa-brands fa-twitter" style="color: var(--main-bg-color);"></i></a>
+      <a class="someCircle" href="https://www.facebook.com/"><i class="fa-brands fa-facebook fa-xl" style="color: var(--main-bg-color);"></i></a>
+      <a class="someCircle" href="https://www.instagram.com/"><i class="fa-brands fa-instagram fa-xl" style="color: var(--main-bg-color);"></i></a>
+      <a class="someCircle" href="https://twitter.com/"><i class="fa-brands fa-twitter fa-xl" style="color: var(--main-bg-color);"></i></a>
     </div>
     </footer>
   </body>
