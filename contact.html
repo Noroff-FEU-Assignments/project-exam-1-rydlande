@@ -41,6 +41,9 @@
       </div>
       <form id="contactForm" class="contactContainer" action="form-handler.php" method="post">
 
+        <span id="successMessage" class="contactTrue"></span>
+
+
         <input type="text"  placeholder="Name"          id="contactName"    class="contactForm">
         <span id="nameMessage" class="contactFalse"></span>
 
@@ -51,7 +54,7 @@
         <span id="subjectMessage" class="contactFalse"></span>
 
         <span class="contactQ">What do you wanna ask us?</span>
-        <span id="contentMessage" class="contactFalseTop"></span>
+        <span id="contentMessage" class="contactFalse"></span>
         <textarea type="text" rows="10" placeholder="Message..." id="formContent" class="contactForm"></textarea>
 
         <button   type="submit" class="contactBtn">Send</button> 
