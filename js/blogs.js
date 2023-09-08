@@ -65,7 +65,7 @@ const getBlogs = () => {
     .then(res => res.json())
     .then(data => {
       allBlogs = data;
-      renderBlogs();
+      renderBlogs()
       hideLoading();
     });
 };
@@ -74,7 +74,7 @@ const getBlogs = () => {
 function renderBlogs() {
   const showBlogs = allBlogs.slice(startIndex, startIndex + blogsPerPage);
 
-  const blogHTML = showBlogs.map((element) => {
+    const blogHTML = showBlogs.map((element) => {
     const { id, date, title, jetpack_featured_media_url } = element;
     const d = new Date(date).toLocaleDateString('en-EU', {
       day: 'numeric',
