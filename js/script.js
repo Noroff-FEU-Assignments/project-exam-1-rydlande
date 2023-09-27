@@ -120,5 +120,5 @@ const renderBlogs = (data) => {
 
   showSlide(0);
 };
-
+window.addEventListener("resize", getBlogs)     //gjør at funksjonen getBlogs kjører igjen når skjermstørrelsen forandrer seg
 getBlogs();
